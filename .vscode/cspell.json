@@ -1,0 +1,12 @@
+// cSpell Settings
+{
+    // Version of the setting file.  Always 0.1
+    "version": "0.1",
+    "// language": [
+        "\n    // language - current active spelling language"
+    ],
+    // words - list of words to be always considered correct
+    "words": [
+        "esnext"
+    ]
+}

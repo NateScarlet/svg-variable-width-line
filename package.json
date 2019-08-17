@@ -1,0 +1,54 @@
+{
+  "name": "svg-variable-width-line",
+  "version": "0.1.0",
+  "description": "Create svg variable width line from points",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "mochapack",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NateScarlet/svg-variable-width-line.git"
+  },
+  "keywords": [
+    "svg",
+    "stroke",
+    "line"
+  ],
+  "author": {
+    "name": "NateScarlet",
+    "email": "NateScarlet@Gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NateScarlet/svg-variable-width-line/issues"
+  },
+  "homepage": "https://github.com/NateScarlet/svg-variable-width-line#readme",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@types/chai": "^4.2.0",
+    "@types/mocha": "^5.2.7",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "babel-loader": "^8.0.6",
+    "chai": "^4.2.0",
+    "eslint": "^6.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mocha": "^6.2.0",
+    "mochapack": "^1.1.3",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
+    "webpack": "^4.39.2",
+    "webpack-chain": "^6.0.0",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "dependencies": {
+    "eslint-config-prettier": "^6.0.0",
+    "prettier": "^1.18.2"
+  }
+}
