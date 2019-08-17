@@ -4,6 +4,8 @@ Create svg `path` with each point can have variable width.
 
 Can create line with `PointerEvent.pressure`.
 
+[Demo](https://natescarlet.github.io/svg-variable-width-line/)
+
 ```javascript
 import * as svgVariableWidthLine from 'svg-variable-width-line';
 
