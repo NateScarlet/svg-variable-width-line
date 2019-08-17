@@ -7,7 +7,8 @@
   "scripts": {
     "test": "mochapack",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server"
+    "build:demo": "webpack --mode production --config webpack.demo.config.js",
+    "start": "webpack-dev-server --config webpack.demo.config.js"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,7 @@
     "@typescript-eslint/parser": "^2.0.0",
     "babel-loader": "^8.0.6",
     "chai": "^4.2.0",
+    "copy-webpack-plugin": "^5.0.4",
     "eslint": "^6.1.0",
     "html-webpack-plugin": "^3.2.0",
     "mocha": "^6.2.0",
