@@ -4,11 +4,16 @@
   "description": "Create svg variable width line from points",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "mochapack",
     "build": "webpack --mode production",
     "build:demo": "webpack --mode production --config webpack.demo.config.js",
-    "start": "webpack-dev-server --config webpack.demo.config.js"
+    "start": "webpack-dev-server --config webpack.demo.config.js",
+    "prepare": "make dist",
+    "prepublishOnly": "npm run test"
   },
   "repository": {
     "type": "git",

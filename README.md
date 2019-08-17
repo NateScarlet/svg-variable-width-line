@@ -1,5 +1,7 @@
 # SVG Variable width line
 
+[![npm package](https://img.shields.io/npm/v/svg-variable-width-line)](https://www.npmjs.com/package/svg-variable-width-line)
+
 Create svg `path` with each point can have variable width.
 
 Can create line with `PointerEvent.pressure`.
