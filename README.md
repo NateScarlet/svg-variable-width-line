@@ -1,6 +1,7 @@
 # SVG Variable width line
 
 [![npm package](https://img.shields.io/npm/v/svg-variable-width-line)](https://www.npmjs.com/package/svg-variable-width-line)
+[![Build Status](https://img.shields.io/circleci/project/github/NateScarlet/svg-variable-width-line.svg)](https://circleci.com/gh/NateScarlet/svg-variable-width-line)
 
 Create svg `path` with each point can have variable width.
 
