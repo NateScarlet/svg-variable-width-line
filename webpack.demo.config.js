@@ -5,7 +5,9 @@ const path = require('path');
 module.exports = (env, argv) => {
   const config = require('./webpack.common.config');
   config.entry('index').add('./demo/index.ts');
-  config.output.path(path.resolve(__dirname, 'dist-demo'));
+  config.output
+    .path(path.resolve(__dirname, 'dist-demo'))
+    .filename('[name].[contenthash].js');
   config.devServer.contentBase('demo');
   config.mode('development');
   config.devtool('inline-source-map');
