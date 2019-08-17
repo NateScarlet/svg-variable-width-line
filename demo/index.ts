@@ -1,4 +1,5 @@
 import * as svgVariableWidthLine from '@';
+import { Point } from '@';
 
 class DrawingHandler {
   public el: SVGSVGElement;
@@ -37,8 +38,9 @@ class DrawingHandler {
       return;
     }
     this.lastDrawTime = Date.now();
-    const p = svgVariableWidthLine.util.translatePoint(this.el, e);
-    p.w = e.pressure * this.width;
+    const { x, y } = svgVariableWidthLine.util.translatePoint(this.el, e);
+    const w = e.pressure * this.width;
+    const p: Point = { x, y, w };
     const lastPoint = this.points.slice(-1)[0];
     if (
       lastPoint &&
@@ -60,7 +62,9 @@ class DrawingHandler {
     this.el.addEventListener('pointerup', this.onPointerup.bind(this));
   }
   update(): void {
-    const { d } = svgVariableWidthLine.compute(...this.points);
+    const { d } = svgVariableWidthLine.compute(
+      ...svgVariableWidthLine.smooth(this.points, 4)
+    );
     this.mustTarget.setAttribute('d', d);
   }
 }
