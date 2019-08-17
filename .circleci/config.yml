@@ -1,0 +1,55 @@
+version: '2.1'
+executors:
+  node:
+    docker:
+      - image: circleci/node:lts
+jobs:
+  build:
+    executor: node
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: 'Install dependencies'
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Test
+          command: make test
+      - run:
+          name: Build
+          command: make
+      - persist_to_workspace:
+          root: dist-demo
+          paths:
+            - '*'
+  deploy-gh-pages:
+    executor: node
+    steps:
+      - checkout
+      - attach_workspace:
+          at: dist-demo
+      - add_ssh_keys:
+          fingerprints:
+            - '2f:0f:ce:3e:4a:c0:89:77:08:17:5f:a2:9f:df:77:ca'
+      - run:
+          name: 'Deploy'
+          command: make deploy
+workflows:
+  version: 2
+  main:
+    jobs:
+      - build:
+          filters:
+            branches:
+              ignore: gh-pages
+      - deploy-gh-pages:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
