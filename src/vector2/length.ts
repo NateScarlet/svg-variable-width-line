@@ -1,4 +1,4 @@
-import { Vector2 } from '@/types';
+import { Vector2 } from '../types';
 
 /** Length between points */
 export function length(...points: Vector2[]): number {
