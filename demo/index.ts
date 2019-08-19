@@ -49,6 +49,12 @@ class DrawingHandler {
       return;
     }
     this.points.push(p);
+    if (e.pointerType === 'mouse') {
+      this.points = this.points.map((v, i, array) => ({
+        ...v,
+        w: this.width * (i / array.length),
+      }));
+    }
     this.update();
   }
   onPointerup(e: PointerEvent): void {
@@ -81,5 +87,12 @@ class DrawingHandler {
       return;
     }
     el.textContent = e.pressure.toString();
+  });
+  el.addEventListener('pointermove', e => {
+    const el = document.querySelector('#pointer-type');
+    if (!el) {
+      return;
+    }
+    el.textContent = e.pointerType;
   });
 })();
