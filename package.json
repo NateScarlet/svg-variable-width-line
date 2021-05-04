@@ -35,7 +35,7 @@
   "homepage": "https://github.com/NateScarlet/svg-variable-width-line#readme",
   "devDependencies": {
     "@babel/core": "7.14.0",
-    "@babel/preset-env": "7.14.0",
+    "@babel/preset-env": "7.14.1",
     "@types/chai": "4.2.17",
     "@types/mocha": "5.2.7",
     "@typescript-eslint/eslint-plugin": "2.34.0",
