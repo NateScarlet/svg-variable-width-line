@@ -1,5 +1,6 @@
 import * as lib from '@';
-import { expect } from 'chai';
+import { expect, describe, it } from 'vitest';
+
 describe('compute', function() {
   describe('side-points', function() {
     it('x', function() {

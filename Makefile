@@ -12,11 +12,11 @@ gh-pages/.git:
 test:
 	npm run test
 
-dist: src/* src/*/* webpack.common.config.js webpack.config.js
+dist: src/* src/*/*
 	rm -rf dist
 	npm run build
 
-dist-demo: src/* src/*/* demo/* webpack.common.config.js webpack.demo.config.js
+dist-demo: src/* src/*/* demo/* vite.config.ts
 	rm -rf dist-demo
 	npm run build:demo
 

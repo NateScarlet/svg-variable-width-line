@@ -1,5 +1,5 @@
 import * as lib from '@';
-import { expect } from 'chai';
+import { expect, describe, it } from 'vitest';
 
 describe('vector2-length', function() {
   it('simple-x', function() {
